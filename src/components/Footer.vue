@@ -31,6 +31,21 @@ export default {
     </footer>
 </template>
 
-<style>
+<style lang="scss">
+@use '../scss/partials/variabiles' as *;
+
+footer{
+    background-color: $footer;
+    height: 100px;
+    color: $white;
+
+    .second-text{
+    float: left;
+  }    
+  .social{
+    float: right;
+  }
+
+  }
 
 </style>

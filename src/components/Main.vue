@@ -142,6 +142,88 @@ export default {
   </main>
 </template>
 
-<style>
+<style lang="scss">
+@use '../scss/partials/variabiles' as *;
+
+main{
+    margin-top: 80px ;
+
+    .card-container{
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card{
+    padding: 40px 15px 0 0;
+    cursor: pointer;
+
+    .contenuto-card{
+    position: relative;
+
+    .image-card{
+
+      &:hover .second-img {
+      display: block;
+  }
+
+    display: block;
+    
+    img{
+    width: 300px;
+
+  }
+
+  
+  
+  }
+  .second-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  .discount{
+  position: absolute;
+  bottom: 30px;
+  .discount-red,.discount-green{
+    padding: 5px; 
+    font-size: 14px;
+  }
+  .discount-red{
+    background-color: $red;
+    color: $white;
+  }
+  .discount-green{
+    background-color: $green;
+    color: $white;
+   }
+   }
+  .heart{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $white;
+    padding: 5px 10px;
+    font-size: 20px;
+  } 
+  }
+  .text span{
+    display: block;
+  }      
+  .text span:first-child{
+    font-size: 12px;
+  }
+  .text span:last-child,.prezzo span:first-child{
+    font-weight: 600;
+  }  
+  .prezzo span:first-child{
+    color: $red;
+  }
+
+  }
+
+  }
+
+  }
 
 </style>
+
