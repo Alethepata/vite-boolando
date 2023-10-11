@@ -1,6 +1,20 @@
 <script>
+import Menu from './partials/Menu.vue';
+import productsMenu from '../data/menuProducts';
+
 export default {
-    name:'Header'
+  name: 'Header',
+  data() {
+    return {
+      productsMenu,
+
+    }
+
+  },
+  components: {
+        Menu,
+    }  
+
 }
 </script>
 
@@ -10,9 +24,12 @@ export default {
       <div class="container flex">
         <nav>
           <ul class="flex">
-            <li><a href="#">Donna</a></li>
-            <li><a href="#">Uomo</a></li>
-            <li><a href="#">Bambini</a></li>
+            <Menu 
+            v-for="(section, index) in productsMenu" 
+            :key="index" 
+            :type="section.type"
+            :link="section.link"
+            />
           </ul>
         </nav>
 
