@@ -1,6 +1,12 @@
 <script>
 export default {
   name: 'ProductCard',
+  data() {
+    return {
+      like:false
+    }
+    
+  },
   props: {
     cardObj:Object
 
@@ -9,6 +15,9 @@ export default {
     getImg(img) {
       return new URL (`../../assets/img/${img}`, import.meta.url).href
       
+    },
+    likeHeart() {
+      this.like = !this.like
     }
   
 }
@@ -33,8 +42,8 @@ export default {
     <span class=" discount-green" v-if="cardObj.sustainability">Sostenibilità</span>
   </div>
 
-  <div class="heart">
-    <span>&hearts;</span>
+  <div class="heart" @click="likeHeart()">
+    <span :class="{'like-color' : like}">&hearts;</span>
   </div>
 </div>
 
@@ -55,6 +64,9 @@ export default {
 <style lang="scss">
 @use '../../scss/partials/variabiles' as *;
 
+.like-color{
+  color: $red;
+}
 
     .card{
     padding: 40px 15px 0 0;
