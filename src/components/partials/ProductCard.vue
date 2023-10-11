@@ -51,7 +51,7 @@ export default {
     <span class=" discount-green" v-if="cardObj.sustainability">Sostenibilità</span>
   </div>
 
-  <div class="heart" @click="likeHeart()">
+  <div class="heart" @click.stop="likeHeart()">
     <span :class="{'like-color' : like}">&hearts;</span>
   </div>
 </div>
