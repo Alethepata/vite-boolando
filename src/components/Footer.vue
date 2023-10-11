@@ -38,6 +38,7 @@ footer{
     background-color: $footer;
     height: 100px;
     color: $white;
+    padding-top: 20px;
 
     .second-text{
     float: left;
