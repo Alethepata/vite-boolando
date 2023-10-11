@@ -1,11 +1,16 @@
 <script>
+import PopUp from './PopUp.vue'
 export default {
   name: 'ProductCard',
   data() {
     return {
-      like:false
+      like: false,
+      clicked: false
     }
     
+  },
+  components: {
+    PopUp
   },
   props: {
     cardObj:Object
@@ -18,6 +23,9 @@ export default {
     },
     likeHeart() {
       this.like = !this.like
+    },
+    getClick() {
+      this.clicked = !this.clicked
     }
   
 }
@@ -27,7 +35,8 @@ export default {
 
 <template>
   
-  <div class="card">
+  <div class="card" @click="getClick()">
+    <PopUp :class="{'none' : !clicked}" :popUp="cardObj" :clicked="clicked"/>
 
 <div class="contenuto-card">
   <div class="image-card">
@@ -66,6 +75,9 @@ export default {
 
 .like-color{
   color: $red;
+}
+.none{
+  display: none;
 }
 
     .card{
