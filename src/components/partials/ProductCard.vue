@@ -36,7 +36,7 @@ export default {
 <template>
   
   <div class="card" @click="getClick()">
-    <PopUp :class="{'none' : !clicked}" :popUp="cardObj"/>
+    <PopUp :class="{'none' : !clicked}" :popUp="cardObj" :clicked="clicked"/>
 
 <div class="contenuto-card">
   <div class="image-card">

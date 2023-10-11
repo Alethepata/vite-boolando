@@ -9,7 +9,8 @@ export default {
 </script>
 
 <template>
-  <div class="pop-up">
+  <div class="pop-up" :class="{'none' : clicked=false}">
+     <span>&cross;</span>
        <h1>{{ popUp.brand }}</h1>  
        <p>{{ popUp.story }}</p> 
   </div>
@@ -28,6 +29,9 @@ export default {
     border:1px solid $grey;
     padding: 40px;
     border-radius: 30px;
+    span{
+        float: right;
+    }
 }
 
 </style>
