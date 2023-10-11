@@ -1,11 +1,13 @@
 <script>
 import ProductCard from './partials/ProductCard.vue';
+import cards from '../data/products';
 
 export default {
   components: { ProductCard },
   name: 'Main',
   data() {
     return {
+      cards,
       components: {
         ProductCard
       }
@@ -20,7 +22,11 @@ export default {
 <main>
       <div class="card-container container flex">
 
-        <ProductCard/>
+        <ProductCard 
+        v-for="(card,index) in cards" 
+        :key="index" 
+        :cardObj="card"
+        />
 
     </div>
 </main>
