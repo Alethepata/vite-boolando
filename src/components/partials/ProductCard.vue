@@ -1,9 +1,13 @@
 <script>
 export default {
   name: 'ProductCard',
+  props: {
+    cardObj:Object
+
+  },
   methods: {
     getImg(img) {
-      return new URL (`../assets/img/${img}`, import.meta.url).href
+      return new URL (`../../assets/img/${img}`, import.meta.url).href
       
     }
   
@@ -19,14 +23,14 @@ export default {
 <div class="contenuto-card">
   <div class="image-card">
 
-    <img class="first-img"  :src="getImg(image.first)" alt="item">
-     <img class="second-img" :src="getImg(image.second)" alt="item">
+    <img class="first-img"  :src="getImg(cardObj.imageFirst)" alt="item">
+     <img class="second-img" :src="getImg(cardObj.imageSecond)" alt="item">
 
   </div>
 
   <div class="discount">
-    <span class="discount-red" v-if="card.discount">{{ card.discount}}</span>
-    <span class=" discount-green" v-if="card.sustainability">Sostenibilità</span>
+    <span class="discount-red" v-if="cardObj.discount">{{ cardObj.discount}}</span>
+    <span class=" discount-green" v-if="cardObj.sustainability">Sostenibilità</span>
   </div>
 
   <div class="heart">
@@ -35,13 +39,13 @@ export default {
 </div>
 
 <div class="text">
-  <span>{{ card.brand}}</span>
-  <span>{{ card.description}}</span>
+  <span>{{ cardObj.brand}}</span>
+  <span>{{ cardObj.description}}</span>
 </div>
 
 <div class="prezzo">
-  <span>{{ card.discountedPrice}}</span>
-  <span :class="{'line-through' : card.discountedPrice}">{{card.price}}</span>
+  <span>{{ cardObj.discountedPrice}}</span>
+  <span :class="{'line-through' : cardObj.discountedPrice}">{{cardObj.price}}</span>
 </div>
 
 </div>
@@ -49,7 +53,7 @@ export default {
 </template>
 
 <style lang="scss">
-@use '../scss/partials/variabiles' as *;
+@use '../../scss/partials/variabiles' as *;
 
 
     .card{
